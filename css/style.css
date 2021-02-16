@@ -1,0 +1,43 @@
+body{
+    box-sizing: border-box;
+}
+
+header nav ul li {
+    display: inline;
+ ;
+    padding-left: 100px;
+}
+header nav ul li a {
+ text-decoration: none;
+ color: crimson;
+ font-size: 20px;
+ font-weight: bold;
+} 
+
+header nav{
+      background-color: gray;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      text-align: center;
+}
+
+
+footer nav ul li a {
+     text-decoration: none;
+ color: crimson;
+ font-size: 20px;
+ font-weight: bold;
+
+}
+
+footer nav ul li {
+    display: inline;
+ ;
+    padding-left: 100px;
+}
+footer nav{
+      background-color: gray;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      text-align: center;
+}
