@@ -146,6 +146,10 @@ makeFooter();
 
 
 
+// forms
+let button = document.getElementById('btn')
+button.addEventListener('fuck me')
+
 
 
 // for (i = 0; i < resturent.length; i++) {

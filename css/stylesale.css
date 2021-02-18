@@ -4,3 +4,7 @@ table , th ,td {
 h2{
     padding-bottom: 50px;
 }
+#newShop input{
+    margin: 3px;
+ 
+}
