@@ -32,19 +32,11 @@ Resturent.prototype.calcucustumerperhour = function () {
 Resturent.prototype.calcucookiesPressingPerHouer = function () {
     for (let i = 0; i < workinghour.length; i++) {
         this.cookiesPressingPerHouer.push(Math.floor(this.custumerperhour[i] * this.avgcookies));
-        this.totalcookiesperday += this.cookiesPressingPerHouer
+        this.totalcookiesperday += this.cookiesPressingPerHouer[i]
     }
 }
 
 
-let seattile = new Resturent('siattle', 23, 65, 6.3)
-
-let tokyo = new Resturent('tokyo', 3, 24, 1.2)
-
-let dubai = new Resturent('dubai', 11, 38, 3.7)
-
-let paris = new Resturent('paris', 20, 36, 2.3)
-let lima = new Resturent('lima', 23, 65, 6.3)
 
 
 console.log(resturent);
@@ -98,6 +90,7 @@ Resturent.prototype.resttable = function () {
     }
     let totalDataEachShope = document.createElement('td')
     datarow.appendChild(totalDataEachShope)
+    console.log(this.totalcookiesperday);
     totalDataEachShope.textContent = this.totalcookiesperday
 
 }
@@ -110,11 +103,12 @@ let makeFooter = function () {
     footerRow.appendChild(footerTh);
     footerTh.textContent = "totale"
     let totOfTotale = 0;
-    for (let i = 0; i < workinghour.length; index++) {
+    for (let i = 0; i < workinghour.length; i++) {
         let totaleOfHour = 0;
         for (let j = 0; j < resturent.length; j++) {
-            totaleOfHour += resturent[j].cookiesPressingPerHouer
-            // totOfTotale += Resturent[j].cookiesPressingPerHouer[i]
+            // console.log(resturent[j].cookiesPressingPerHouer[i]);
+            totaleOfHour += resturent[j].cookiesPressingPerHouer[i]
+            totOfTotale += resturent[j].cookiesPressingPerHouer[i]
         }
         let totale = document.createElement('th')
         footerRow.appendChild(totale)
@@ -122,18 +116,29 @@ let makeFooter = function () {
 
     }
 
-    // let finalth = document.createElement('th')
-    // footerRow.appendChild(finalth)
-    // finalth.textContent = totOfTotale
+    let finalth = document.createElement('th')
+    footerRow.appendChild(finalth)
+    finalth.textContent = totOfTotale
 }
 
 
 
 
 //calling functions 
+let seattile = new Resturent('siattle', 23, 65, 6.3)
+
+let tokyo = new Resturent('tokyo', 3, 24, 1.2)
+
+let dubai = new Resturent('dubai', 11, 38, 3.7)
+
+let paris = new Resturent('paris', 20, 36, 2.3)
+let lima = new Resturent('lima', 23, 65, 6.3)
+
 makeheader();
 
-for (i = 0; i < Resturent.length; i++) {
+
+
+for (i = 0; i < resturent.length; i++) {
     resturent[i].calcucustumerperhour();
     resturent[i].calcucookiesPressingPerHouer();
     resturent[i].resttable();
@@ -142,13 +147,44 @@ makeFooter();
 
 
 
+// // forms
+let newShope = document.getElementById('newShope')
+newShope.addEventListener('submit', submitter)
+function submitter(event) {
+
+    event.preventDefault();
+    console.log(event);
+}
 
 
 
 
-// forms
-let button = document.getElementById('btn')
-button.addEventListener('fuck me')
+// preventDefault();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
